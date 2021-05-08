@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-
 import {
   RiGlobalLine,
   RiLineChartFill,
@@ -9,55 +8,51 @@ import { MdPeople } from "react-icons/md";
 
 export const Container = styled.div`
   background: #fff;
-  border-radius: 2rem;
-  margin: 2rem 0;
-  padding: 4rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  padding: 1.3rem;
 
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
   > h1 {
-    font-size: 1.6rem;
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 
   > span {
     display: block;
-    font-size: 1.4rem;
-    margin: 2rem 0;
+    font-size: 0.8rem;
+    margin: 0.8rem 0;
     color: gray;
   }
 
   .container-icons {
+    margin: 1.3rem 0;
     button {
       border: 0;
-      padding: 1rem;
       border-radius: 50%;
+      padding: 0.5rem;
+      margin-right: 0.5rem;
       outline: none;
-      cursor: pointer;
 
-      & + button {
-        margin: 0 1rem;
-      }
+      cursor: pointer;
     }
   }
-
   .container-peoples {
-    margin-top: 2rem;
     display: flex;
-    justify-content: space-between;
-
-    > div {
-      display: flex;
-      align-items: center;
-      > span {
-        font-size: 1.6rem;
-        display: block;
-        margin-left: 1rem;
-      }
-    }
+    align-items: center;
+    margin: 1rem 0;
+    font-size: 1rem;
+    color: gray;
   }
 `;
 
 const iconCSS = css`
-  width: 2rem;
-  height: 2rem;
+  width: 1rem;
+  height: 0.8rem;
   color: gray;
 `;
 export const GlobalIcon = styled(RiGlobalLine)`
@@ -69,10 +64,12 @@ export const ChartIcon = styled(RiLineChartFill)`
 `;
 
 export const PeopleIcon = styled(MdPeople)`
-  ${iconCSS}
+  ${iconCSS};
+  height: 1rem;
+  margin-right: 0.5rem;
 `;
 
 export const ArrowIcon = styled(RiArrowRightLine)`
-  ${iconCSS}
   color: #3b3b98;
+  margin-left: auto;
 `;

@@ -5,10 +5,10 @@ import {
   ContainerAvatar,
   MoreIcon
 } from "./styles";
-import avatarMan from "../assets/avatar/man.svg";
-import avatarWoman01 from "../assets/avatar/women.svg";
-import avatarWoman02 from "../assets/avatar/women2.svg";
-import avatarWoman03 from "../assets/avatar/women3.svg";
+import avatarMan from "../../assets/avatar/man.svg";
+import avatarWoman01 from "../../assets/avatar/women.svg";
+import avatarWoman02 from "../../assets/avatar/women2.svg";
+import avatarWoman03 from "../../assets/avatar/women3.svg";
 export function Header() {
   return (
     <Container>

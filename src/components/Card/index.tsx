@@ -18,7 +18,7 @@ interface CardProps {
 export function Card({ data }: CardProps) {
   return (
     <Container>
-      <img src={data.image} alt="" />
+      <img src={data.image} alt={data.title} />
       <h1>{data.title}</h1>
       <span>Project Manager | {data.company}</span>
 
@@ -34,10 +34,8 @@ export function Card({ data }: CardProps) {
         </button>
       </div>
       <div className="container-peoples">
-        <div>
-          <PeopleIcon />
-          <span>{data.amount} Peoples</span>
-        </div>
+        <PeopleIcon />
+        <span>{data.amount} Peoples</span>
         <ArrowIcon />
       </div>
     </Container>

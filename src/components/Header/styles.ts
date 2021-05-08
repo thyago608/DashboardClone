@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { RiSearch2Line, RiAddLine } from "react-icons/ri";
 
+interface Props {
+  isActive: boolean;
+}
+
 export const Container = styled.header`
   .wrapper {
     display: flex;
@@ -9,18 +13,17 @@ export const Container = styled.header`
   }
 `;
 
-export const InputSearch = styled.div`
-  width: 32%;
+export const InputSearch = styled.div<Props>`
   position: relative;
 
   > input {
-    padding: 2rem;
+    border: 0;
     border-radius: 4rem;
 
-    width: 100%;
-    height: 4rem;
-    font-size: 1.6rem;
-    border: 0;
+    width: 25rem;
+    height: 3rem;
+    font-size: 1rem;
+    padding: 1rem;
     outline: none;
 
     &::placeholder {
@@ -35,8 +38,8 @@ export const ContainerAvatar = styled.div`
   align-items: center;
 
   > img {
-    width: 3.8rem;
-    height: 3.8rem;
+    width: 3rem;
+    height: 3rem;
 
     & + img {
       margin: 0 0.1rem;
@@ -44,29 +47,34 @@ export const ContainerAvatar = styled.div`
   }
 
   > button {
-    width: 4rem;
-    height: 4rem;
+    width: 2.8rem;
+    height: 2.8rem;
 
     background: #3b3b98;
     border-radius: 50%;
     border: 0;
-    cursor: pointer;
 
-    margin-left: 1rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+
+    transition: filter 0.2s ease;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
   }
 `;
 
 export const SearchIcon = styled(RiSearch2Line)`
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 100%;
 
   position: absolute;
 
-  top: 30%;
-  right: 1.5rem;
+  top: 0;
+  right: 1rem;
 
   color: #a4b0be;
-
   cursor: pointer;
 `;
 
