@@ -15,7 +15,7 @@ interface CardProps {
   };
 }
 
-export function Card({ data }: CardProps) {
+export function CardPrimary({ data }: CardProps) {
   return (
     <Container>
       <img src={data.image} alt={data.title} />

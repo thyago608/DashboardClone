@@ -14,7 +14,7 @@ interface CardProps {
   };
 }
 
-export function CardSimple({ data }: CardProps) {
+export function CardSimplePrimary({ data }: CardProps) {
   return (
     <Container>
       <h1>{data.title}</h1>
