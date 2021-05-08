@@ -21,79 +21,40 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   height: 100%;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1420px;
   margin: 0 auto;
 
   display: grid;
-  grid-template-columns: 250px 1fr;
-
-  .column-right {
-    padding: 4rem 5rem 4rem;
-
-    .wrapper-column-right {
-      height: 100%;
-
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-
-      padding: 20px 0;
-    }
-  }
-  .column-left {
-    background: #ffffff;
-    padding: 1.5rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    > img {
-      margin: 2rem auto;
-      width: 60%;
-    }
-  }
+  grid-template-columns: 15.6rem 1fr;
 `;
 
-export const More = styled.div`
-  flex: 1;
-
-  padding: 1rem;
+export const ColumnLeft = styled.div`
+  background: #ffffff;
+  padding: 1.5rem;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background: white;
-
-  > span {
-    font-weight: 600;
-    text-align: center;
-    margin: 1rem 0;
-    font-size: 1.6rem;
-  }
 
   > img {
-    height: 49%;
+    margin: 2rem auto;
+    width: 50%;
   }
 `;
 
 export const Navigation = styled.nav`
-  flex: 2;
-  margin-top: 3rem;
-  ul {
-    height: 100%;
+  margin: 3rem auto;
 
+  ul {
     li {
-      height: 5rem;
-      padding: 0 1.5rem;
-      border-radius: 0.8rem;
+      height: 3rem;
+      padding: 0 1rem;
+      border-radius: 0.7rem;
       color: gray;
 
-      font-size: 1.7rem;
+      font-size: 1rem;
 
       display: flex;
       align-items: center;
-      justify-content: space-between;
 
       cursor: pointer;
 
@@ -111,27 +72,94 @@ export const Navigation = styled.nav`
   }
 `;
 
+export const More = styled.div`
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+
+  > span {
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+
+    &:first-of-type {
+      margin: 0.3rem 0;
+    }
+  }
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    margin: 0.5rem 0;
+  }
+`;
+
+export const ColumnRight = styled.div`
+  padding: 3rem;
+
+  .wrapper-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    padding: 20px 0;
+  }
+`;
+
 export const Column = styled.section`
-  header {
+  > header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
     h1 {
-      font-size: 2rem;
-    }
+      font-family: Poppins;
+      font-size: 1rem;
+      font-weight: 500;
 
-    span {
-      font-size: 1.5rem;
-      color: #a4b0be;
-      margin: 0 1.5rem;
+      span {
+        font-family: Archivo;
+        font-size: 0.85rem;
+        color: #a4b0be;
+        margin: 0 0.8rem;
+      }
+    }
+  }
+  .add-project {
+    background: white;
+    border: 0;
+    border-radius: 0.8rem;
+    width: 100%;
+    height: 4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #3b3b98;
+    cursor: pointer;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: Poppins;
+
+    transition: filter 0.2s ease;
+
+    &:hover {
+      filter: brightness(0.9);
     }
   }
 `;
 
 const iconCSS = css`
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 1rem;
 `;
 
 export const DashboardIcon = styled(RiLayoutMasonryFill)`
@@ -158,8 +186,12 @@ export const PeoplesIcon = styled(MdPeople)`
   ${iconCSS}
 `;
 
+export const AddIcon = styled(RiAddLine)`
+  ${iconCSS}
+`;
+
 export const ArrowRightIcon = styled(RiArrowRightLine)`
+  width: 2.2rem;
+  height: 2.2rem;
   color: #3b3b98;
-  width: 3rem;
-  height: 2rem;
 `;

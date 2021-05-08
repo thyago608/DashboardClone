@@ -10,23 +10,29 @@ import {
   PeoplesIcon,
   ArrowRightIcon,
   More,
-  Column
+  Column,
+  ColumnLeft,
+  ColumnRight,
+  AddIcon
 } from "./styles";
 
-import { Header } from "../Header";
-import { Card } from "../Card";
+import { Header } from "../components/Header";
+import { CardPrimary } from "../components/CardPrimary";
+import { CardSecundary } from "../components/CardSecundary";
+import { CardSimplePrimary } from "../components/CardSimplePrimary";
+import { CardSimpleSecundary } from "../components/CardSimpleSecundary";
+
+import { Projects, Progress } from "../assets/data";
 
 import logo from "../assets/images/logo.png";
-import flover from "../assets/images/flover.png";
 import more from "../assets/images/more.png";
-import strap from "../assets/images/strap.png";
-import tabma from "../assets/images/tabma.png";
+import flover from "../assets/images/flover.png";
 
 export function Dashboard() {
   return (
     <Container>
       <Wrapper>
-        <div className="column-left">
+        <ColumnLeft>
           <img src={logo} alt="logo" />
           <Navigation>
             <ul>
@@ -57,61 +63,68 @@ export function Dashboard() {
               </li>
             </ul>
           </Navigation>
+
           <More>
             <ArrowRightIcon />
-            <span>More Productivity{"\n"}With Premiumn</span>
+            <span>More Productivity</span>
+            <span>With Premium</span>
             <img src={more} alt="" />
           </More>
-        </div>
+        </ColumnLeft>
 
-        <div className="column-right">
+        <ColumnRight>
           <Header />
-          <div className="wrapper-column-right">
+          <div className="wrapper-columns">
             <Column>
               <header>
-                <h1>New Projects</h1>
-                <span>+7 new</span>
+                <h1>
+                  New Projects
+                  <span>+7 new</span>
+                </h1>
               </header>
-              <Card
+              <CardSimplePrimary
                 data={{
                   title: "Sold Iron Company",
                   company: "Max Shu",
-                  amount: 3,
-                  image: strap
-                }}
-              />
-            </Column>
-
-            <Column>
-              <header>
-                <h1>New Projects</h1>
-                <span>+7 new</span>
-              </header>
-              <Card
-                data={{
-                  title: "Strap E-commerce",
-                  company: "Lara Dent",
-                  amount: 4,
-                  image: tabma
-                }}
-              />
-            </Column>
-
-            <Column>
-              <header>
-                <h1>New Projects</h1>
-                <span>+7 new</span>
-              </header>
-              <Card
-                data={{
-                  title: "Tabma Bank Landing",
-                  company: "Lara Dent",
                   amount: 3
                 }}
               />
+
+              <CardSimpleSecundary
+                data={{
+                  title: "Flover Branding",
+                  company: "Max Shu",
+                  image: flover
+                }}
+              />
+
+              <button className="add-project">
+                <AddIcon />
+                Add New Project
+              </button>
+            </Column>
+
+            <Column>
+              <header>
+                <h1>Priority projects</h1>
+              </header>
+
+              {Projects.map((project) => (
+                <CardPrimary data={project} />
+              ))}
+            </Column>
+
+            <Column>
+              <header>
+                <h1>Task Progress</h1>
+              </header>
+
+              {Progress.map((project) => (
+                <CardSecundary data={project} />
+              ))}
             </Column>
           </div>
-        </div>
+        </ColumnRight>
       </Wrapper>
     </Container>
   );
