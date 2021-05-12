@@ -8,6 +8,8 @@ interface Props {
     amount: number;
     days: number;
     avatar: string;
+    colorBar: "red" | "purple";
+    porcentage: number;
   };
 }
 
@@ -35,7 +37,7 @@ export function CardSecundary({ data }: Props) {
             </span>
             <span>{data.days} days left</span>
           </div>
-          <BarProgress className="barColor" />
+          <BarProgress color={data.colorBar} porcentage={data.porcentage} />
         </div>
       </UserProgress>
     </Container>

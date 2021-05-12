@@ -10,16 +10,19 @@ export const Progress = [
     name: "Martin Madracco",
     amount: 49,
     days: 3,
-    avatar: women
+    avatar: women2,
+    colorBar: "purple",
+    porcentage: 49
   },
-
   {
     title: "Slaab Design",
     job: "Designer",
     name: "Lola Fora",
     amount: 34,
     days: 2,
-    avatar: women2
+    avatar: women,
+    colorBar: "red",
+    porcentage: 34
   }
 ];
 

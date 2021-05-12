@@ -5,13 +5,11 @@ import {
   RiLayoutMasonryFill,
   RiFolderChartFill,
   RiArticleFill,
-  RiArrowRightSLine,
-  RiGlobalLine,
-  RiLineChartFill,
   RiAddLine,
-  RiMore2Fill,
-  RiArrowRightLine
+  RiArrowRightLine,
+  RiMore2Fill
 } from "react-icons/ri";
+
 import { MdPeople } from "react-icons/md";
 
 export const Container = styled.div`
@@ -42,27 +40,21 @@ export const ColumnLeft = styled.div`
 `;
 
 export const Navigation = styled.nav`
+  width: 90%;
   margin: 3rem auto;
 
   ul {
     li {
+      position: relative;
       height: 3rem;
-      padding: 0 1rem;
       border-radius: 0.7rem;
       color: gray;
 
       font-size: 1rem;
-
       display: flex;
       align-items: center;
-
+      justify-content: flex-start;
       cursor: pointer;
-
-      &::after {
-        content: "";
-        width: 3rem;
-        height: 100%;
-      }
 
       &:hover {
         background: #3b3b98;
@@ -159,7 +151,7 @@ export const Column = styled.section`
 const iconCSS = css`
   width: 1.2rem;
   height: 1.2rem;
-  margin-right: 1rem;
+  margin: 0 1rem;
 `;
 
 export const DashboardIcon = styled(RiLayoutMasonryFill)`
@@ -194,4 +186,15 @@ export const ArrowRightIcon = styled(RiArrowRightLine)`
   width: 2.2rem;
   height: 2.2rem;
   color: #3b3b98;
+`;
+
+export const MoreIcon = styled(RiMore2Fill)`
+  width: 1.2rem;
+  height: 100%;
+  margin: 0 1rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
 `;

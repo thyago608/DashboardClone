@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { RiGlobalLine } from "react-icons/ri";
+import { linearGradient } from "polished";
 
 interface BarColorProps {
   color: "red" | "purple";
+  porcentage: number;
 }
 
 const colors = {
-  red: ["#9980fa", "#5758bb"],
-  purple: ["#ff7675", "#d63031"]
+  red: ["#ff7675", "#d63031"],
+  purple: ["#9980fa", "#5758bb"]
 };
 
 export const Container = styled.section`
@@ -67,8 +69,12 @@ export const UserProgress = styled.div`
 
 export const BarProgress = styled.div<BarColorProps>`
   margin: 1rem 0;
-  background-image: linear-gradient(to right, #9980fa, #5758bb);
-  width: 100%;
+  background-image: ${(props) =>
+    linearGradient({
+      colorStops: [colors[props.color][0], colors[props.color][1]],
+      toDirection: "to right"
+    })};
+  width: ${(props) => props.porcentage}%;
   height: 0.7rem;
   border-radius: 1rem;
 `;

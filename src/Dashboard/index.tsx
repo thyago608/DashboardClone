@@ -13,7 +13,8 @@ import {
   Column,
   ColumnLeft,
   ColumnRight,
-  AddIcon
+  AddIcon,
+  MoreIcon
 } from "./styles";
 
 import { Header } from "../components/Header";
@@ -39,27 +40,33 @@ export function Dashboard() {
               <li>
                 <DashboardIcon />
                 Dashboard
+                <MoreIcon />
               </li>
               <li>
                 <ProjectIcon />
                 Projects
+                <MoreIcon />
               </li>
               <li>
                 <PlanningIcon />
                 Planning
+                <MoreIcon />
               </li>
 
               <li>
                 <MessagesIcon />
                 Messages
+                <MoreIcon />
               </li>
               <li>
                 <CalendarIcon />
                 Calendar
+                <MoreIcon />
               </li>
               <li>
                 <PeoplesIcon />
                 People
+                <MoreIcon />
               </li>
             </ul>
           </Navigation>
