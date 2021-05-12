@@ -31,12 +31,14 @@ export const Projects = [
     title: "Strap E-commerce",
     company: "Lara Dent",
     image: strap,
-    amount: 4
+    amount: 4,
+    peoplesCount: true
   },
   {
     title: "Tabma Bank Landing",
     company: "Lara Dent",
     image: tabma,
-    amount: 8
+    amount: 8,
+    peoplesCount: false
   }
 ];

@@ -6,12 +6,29 @@ import {
   RiArrowRightLine
 } from "react-icons/ri";
 import { MdPeople } from "react-icons/md";
-
-export const Container = styled.div`
+import { VscCheck } from "react-icons/vsc";
+interface Props {
+  peoples: boolean;
+}
+export const Container = styled.div<Props>`
   background: #fff;
   border-radius: 1rem;
   margin: 1rem 0;
   padding: 1.3rem;
+
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: ${(props) => (props.peoples ? "column" : "row")};
+    align-items: ${(props) => (props.peoples ? "space-between" : "center")};
+    justify-content: ${(props) =>
+      props.peoples ? "flex-start" : "space-between"};
+  }
 
   > img {
     width: 100%;
@@ -31,7 +48,6 @@ export const Container = styled.div`
   }
 
   .container-icons {
-    margin: 1.3rem 0;
     button {
       border: 0;
       border-radius: 50%;
@@ -48,6 +64,14 @@ export const Container = styled.div`
     margin: 1rem 0;
     font-size: 1rem;
     color: gray;
+
+    > button {
+      border: 0;
+      padding: 0.5rem;
+      border-radius: 50%;
+      background: #3b3b98;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -73,4 +97,12 @@ export const PeopleIcon = styled(MdPeople)`
 export const ArrowIcon = styled(RiArrowRightLine)`
   color: #3b3b98;
   margin-left: auto;
+  width: 1rem;
+  height: 1rem;
+`;
+
+export const CheckIcon = styled(VscCheck)`
+  color: white;
+  width: 1rem;
+  height: 1rem;
 `;

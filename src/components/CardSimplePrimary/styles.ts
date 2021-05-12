@@ -11,7 +11,12 @@ export const Container = styled.div`
   border-radius: 1rem;
   margin: 1rem 0;
   padding: 1.3rem;
+  transition: transform 0.4s ease;
 
+  &:hover {
+    transform: scale(1.2, 1.2);
+    margin-bottom: 1.2rem;
+  }
   > img {
     width: 100%;
     height: 100%;

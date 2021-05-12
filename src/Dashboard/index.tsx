@@ -14,7 +14,9 @@ import {
   ColumnLeft,
   ColumnRight,
   AddIcon,
-  MoreIcon
+  MoreIcon,
+  Tertiary,
+  DocumentIcon
 } from "./styles";
 
 import { Header } from "../components/Header";
@@ -22,12 +24,13 @@ import { CardPrimary } from "../components/CardPrimary";
 import { CardSecundary } from "../components/CardSecundary";
 import { CardSimplePrimary } from "../components/CardSimplePrimary";
 import { CardSimpleSecundary } from "../components/CardSimpleSecundary";
-
 import { Projects, Progress } from "../assets/data";
 
 import logo from "../assets/images/logo.png";
 import more from "../assets/images/more.png";
 import flover from "../assets/images/flover.png";
+import women2 from "../assets/avatar/women2.svg";
+import man from "../assets/avatar/man.svg";
 
 export function Dashboard() {
   return (
@@ -127,8 +130,31 @@ export function Dashboard() {
               </header>
 
               {Progress.map((project) => (
-                <CardSecundary data={project} />
+                <CardSecundary key={project.name} data={project} />
               ))}
+
+              <Tertiary className="tertiary">
+                <img src={women2} alt="" />
+                <div className="info-person">
+                  <span>Lola Fora</span>
+                  <span>3 minutes ago</span>
+
+                  <a href="#">
+                    <DocumentIcon />
+                    Flover brief.pdf
+                  </a>
+                </div>
+              </Tertiary>
+
+              <div className="tertiary-minimal">
+                <img src={man} alt="" />
+                <div className="info-person">
+                  <span>Lola Fora</span>
+                  <span>3 minutes ago</span>
+
+                  <strong>"Flover"</strong>
+                </div>
+              </div>
             </Column>
           </div>
         </ColumnRight>

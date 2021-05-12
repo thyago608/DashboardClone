@@ -17,7 +17,12 @@ export const Container = styled.section`
   border-radius: 1rem;
   background: white;
   padding: 1rem;
+  transition: transform 0.4s ease;
 
+  &:hover {
+    transform: scale(1.2, 1.2);
+    margin-bottom: 1.2rem;
+  }
   > header {
     display: flex;
     justify-content: space-between;

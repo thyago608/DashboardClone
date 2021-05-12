@@ -12,6 +12,10 @@ import {
 
 import { MdPeople } from "react-icons/md";
 
+import { IoDocuments } from "react-icons/io5";
+
+import { transparentize } from "polished";
+
 export const Container = styled.div`
   height: 100%;
 `;
@@ -146,6 +150,43 @@ export const Column = styled.section`
       filter: brightness(0.9);
     }
   }
+
+  .tertiary-minimal {
+    display: flex;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.2, 1.2);
+      margin-bottom: 1.2rem;
+    }
+    > img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .info-person {
+      margin: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 0.9rem;
+
+      > span {
+        color: #a5b1c2;
+      }
+
+      > span + span {
+        display: block;
+        margin: 0.3rem 0;
+      }
+
+      > strong {
+        color: #3b3b98;
+      }
+    }
+  }
 `;
 
 const iconCSS = css`
@@ -197,4 +238,50 @@ export const MoreIcon = styled(RiMore2Fill)`
   top: 0;
   right: 0;
   color: white;
+`;
+
+export const Tertiary = styled.div`
+  display: flex;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  transition: transform 0.4s ease;
+
+  &:hover {
+    transform: scale(1.2, 1.2);
+    margin-bottom: 1.2rem;
+  }
+
+  > img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .info-person {
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+
+    > span {
+      color: #a5b1c2;
+    }
+    > span + span {
+      display: block;
+      margin: 0.3rem 0;
+    }
+
+    > a {
+      color: #3b3b98;
+      font-weight: 600;
+    }
+  }
+
+  & + .tertiary {
+    border-top: 1px solid ${transparentize(0.9, "gray")};
+  }
+`;
+
+export const DocumentIcon = styled(IoDocuments)`
+  margin-right: 0.4rem;
 `;

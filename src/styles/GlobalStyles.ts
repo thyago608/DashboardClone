@@ -31,4 +31,12 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
+  a{
+    text-decoration: none;
+
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
 `;

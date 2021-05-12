@@ -40,9 +40,16 @@ export const ContainerAvatar = styled.div`
   > img {
     width: 3rem;
     height: 3rem;
+    transition: transform 0.2s ease;
+    cursor: pointer;
 
     & + img {
       margin: 0 0.1rem;
+    }
+
+    &:hover {
+      transform: scale(2, 2);
+      margin: 0 0.8rem;
     }
   }
 
